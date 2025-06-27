@@ -1,0 +1,133 @@
+{
+  "info": {
+    "name": "Meal Planner API",
+    "_postman_id": "2d6500fa-1234-4e8b-a1b5-abcdef123456",
+    "description": "Collection for Meal Planner API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Recipes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/recipes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "recipes"],
+          "query": []
+        }
+      }
+    },
+    {
+      "name": "Get Recipes by Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/recipes?category=dinner",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "recipes"],
+          "query": [
+            {
+              "key": "category",
+              "value": "dinner"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Recipe",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Tacos\",\n  \"category\": \"dinner\",\n  \"instructions\": \"Meat and tortillas, it is all about the layers.\",\n  \"ingredients\": \"tortillas, beef, cheese\",\n  \"prep_time\": 30\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/recipes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "recipes"]
+        }
+      }
+    },
+    {
+      "name": "Delete Recipe",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/recipes/{{recipe_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "recipes", "{{recipe_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Get All Meal Plans",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/meal-plans",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "meal-plans"]
+        }
+      }
+    },
+    {
+      "name": "Create Meal Plan",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Week 1\",\n  \"date\": \"2024-07-01\",\n  \"recipe_ids\": \"id1,id2,id3\",\n  \"notes\": \"Focus on healthy meals\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/meal-plans",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "meal-plans"]
+        }
+      }
+    },
+    {
+      "name": "Delete Meal Plan",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/meal-plans/{{meal_plan_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "meal-plans", "{{meal_plan_id}}"]
+        }
+      }
+    }
+  ]
+}
